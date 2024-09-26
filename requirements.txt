@@ -1,0 +1,2 @@
+pyrogram==2.0.106
+dataclasses==0.8; python_version < "3.7"
