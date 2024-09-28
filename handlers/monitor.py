@@ -4,6 +4,7 @@ from pyrogram.types import Message
 
 from config import config
 from services.keywords import match_keywords
+from services.notifier import send_notification
 
 
 def register_handlers(app: Client):
@@ -17,4 +18,5 @@ def register_handlers(app: Client):
                     await handle_detect(client, message, kw)
 
 async def handle_detect(client: Client, message: Message, keyword: str):
-    print(client, message, keyword)
+    # Формируем и отправляем уведомление
+    await send_notification(client, message, keyword)
